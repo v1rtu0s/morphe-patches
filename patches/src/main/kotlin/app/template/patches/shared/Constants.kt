@@ -10,23 +10,13 @@ object Constants {
      * Google Maps compatibility for the BlitzerMorph patch.
      * Injects live mobile speed cameras from Blitzer.de (Atudo API) into Google Maps.
      */
-    val COMPATIBILITY_GOOGLE_MAPS = Compatibility(
-        name = "Google Maps",
-        packageName = "com.google.android.apps.maps",
-        // Google Maps distributes as APKM/XAPK on APKMirror/UpToDown
-        apkFileType = ApkFileType.APKM,
-        // Google Maps primary icon color (blue)
-                appIconColor = 0x1A73E8,
-        targets = listOf(
-            // Latest confirmed working version
-            AppTarget(
-                version = "v15.2.0124"
-            ),
-            // Experimental support for future versions
-            AppTarget(
-                version = null,
-                isExperimental = true
+    val COMPATIBILITY_MICROG_MAPS = Compatibility(
+            name = "microG Maps",
+            packageName = "org.ungoogled.ui",
+            apkFileType = ApkFileType.APKM,
+            appIconColor = 0x1A73E8,
+            targets = listOf(
+                AppTarget(version = "26.36.04.973607363")
             )
         )
-    )
 }
