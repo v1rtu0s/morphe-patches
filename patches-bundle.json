@@ -1,7 +1,7 @@
 {
-  "created_at": "2026-10-26T08:05:13Z",
-  "description": "BlitzerMorph: Enables Blitzer.de speed cameras in microG Maps",
-  "download_url": "https://raw.githubusercontent.com/v1rtu0s/morphe-patches/main/patches-1.0.0.mpp",
+  "created_at": "2026-10-26T11:44:26",
+  "description": "## [1.2.1](https://github.com/v1rtu0s/morphe-patches/compare/v1.2.0...v1.2.1) (2026-10-26)\n\n### 🐛 Bug Fixes\n\n* update patches-bundle.json for microG Maps ([0647f8d](https://github.com/v1rtu0s/morphe-patches/commit/0647f8d4fa30f2ae69aa6d5aca4ceec842c0d54d))\n* update patches-list.json for microG Maps ([f6d7ab9](https://github.com/v1rtu0s/morphe-patches/commit/f6d7ab9b9c188751793f032bf917597f28191f17))",
+  "download_url": "https://github.com/v1rtu0s/morphe-patches/releases/download/v1.2.1/patches-1.2.1.mpp",
   "signature_download_url": "",
-  "version": "1.0.0"
+  "version": "1.2.1"
 }
