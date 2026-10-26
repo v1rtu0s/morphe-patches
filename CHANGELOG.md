@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/v1rtu0s/morphe-patches/compare/v1.2.1...v1.2.2) (2026-10-26)
+
+### 🐛 Bug Fixes
+
+* patches-bundle.json for microG Maps ([21c0b2b](https://github.com/v1rtu0s/morphe-patches/commit/21c0b2b29d5c11fc31406147fa43abe201fe3c00))
+* patches-list.json for microG Maps ([3818c03](https://github.com/v1rtu0s/morphe-patches/commit/3818c036561375a4026c6572a76037212a4dacfb))
+
 ## [1.2.1](https://github.com/v1rtu0s/morphe-patches/compare/v1.2.0...v1.2.1) (2026-10-26)
 
 ### 🐛 Bug Fixes
