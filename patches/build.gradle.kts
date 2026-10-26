@@ -1,14 +1,13 @@
-group = "app.template"
+group = "app.blitzermorph"
 
 patches {
-    // TODO: Update this section with your project details.
     about {
-        name = "UserXYZ Patches"
-        description = "Patches for apps I like"
-        source = "git@github.com:UserXYZ/morphe-patches.git"
-        author = "Awesome dev"
-        contact = "na"
-        website = "na"
+        name = "BlitzerMorph"
+        description = "Injects live mobile speed cameras from Blitzer.de (Atudo API) into Google Maps."
+        source = "git@github.com:v1rtu0s/morphe-patches.git"
+        author = "v1rtu0s"
+        contact = "https://github.com/v1rtu0s"
+        website = "https://github.com/v1rtu0s/morphe-patches"
         license = "GPLv3"
     }
 }
