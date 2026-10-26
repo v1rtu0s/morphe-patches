@@ -11,10 +11,20 @@
         {
           "packageName": "org.ungoogled.ui",
           "name": "microG Maps",
-          "description": "microG Maps v26.36.04.973607363",
-          "apkFileType": "APK_REQUIRED",
+          "description": "microG Maps with Blitzer.de speed camera integration",
+          "apkFileType": "APKM",
           "appIconColor": "#1A73E8",
-          "signatures": []
+          "signatures": null,
+          "formFactor": "MOBILE",
+          "targets": [
+            {
+              "version": "26.36.04.973607363",
+              "versionCodes": null,
+              "isExperimental": false,
+              "minSdk": null,
+              "description": null
+            }
+          ]
         }
       ],
       "options": []

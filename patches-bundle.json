@@ -1,1 +1,7 @@
-{"created_at": "2026-10-26T10:41:25", "description": "Morphe Patches: Blitzer.de dynamic speed camera injection", "download_url": "https://raw.githubusercontent.com/v1rtu0s/morphe-patches/main/patches-1.0.0.mpp", "signature_download_url": "", "version": "1.0.0"}
+{
+  "created_at": "2026-10-26T08:05:13Z",
+  "description": "BlitzerMorph: Enables Blitzer.de speed cameras in microG Maps",
+  "download_url": "https://raw.githubusercontent.com/v1rtu0s/morphe-patches/main/patches-1.0.0.mpp",
+  "signature_download_url": "",
+  "version": "1.0.0"
+}
