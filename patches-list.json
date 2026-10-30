@@ -18,7 +18,7 @@
           "formFactor": "MOBILE",
           "targets": [
             {
-              "version": "26.36.04.973607363",
+              "version": "26.43.00.1002020710",
               "versionCodes": null,
               "isExperimental": false,
               "minSdk": null,
