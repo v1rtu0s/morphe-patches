@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/v1rtu0s/morphe-patches/compare/v1.3.0...v1.3.1) (2026-10-30)
+
+### 🐛 Bug Fixes
+
+* update patches-bundle.json to v1.3.0 ([e132bb6](https://github.com/v1rtu0s/morphe-patches/commit/e132bb66c77b5ac3c7e685a732354134fc1fa2e1))
+* update patches-list.json to v1.3.0 with v26.43.00.1002020710 ([e6ec91c](https://github.com/v1rtu0s/morphe-patches/commit/e6ec91cb52152c57085926e9a181cffa4861b931))
+
 ## [1.1.0](https://github.com/v1rtu0s/morphe-patches/compare/v1.0.0...v1.1.0) (2026-10-30)
 
 ### 🐛 Bug Fixes
