@@ -1,3 +1,9 @@
+## [1.4.0](https://github.com/v1rtu0s/morphe-patches/compare/v1.3.1...v1.4.0) (2026-10-30)
+
+### ✨ New Features
+
+* v1.3.0 - add v26.43.00.1002020710 + v26.36.04.973607363 targets ([febde88](https://github.com/v1rtu0s/morphe-patches/commit/febde88a40315fca749992d42a00a099198eb88d))
+
 ## [1.3.1](https://github.com/v1rtu0s/morphe-patches/compare/v1.3.0...v1.3.1) (2026-10-30)
 
 ### 🐛 Bug Fixes
