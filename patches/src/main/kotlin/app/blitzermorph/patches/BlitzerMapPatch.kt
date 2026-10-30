@@ -75,7 +75,8 @@ val blitzerMapPatch = bytecodePatch(
 
     extendWith("extensions/blitzermorph.mpe")
 
-    // 1. Add the new preference constant to SpeedCameras class
+    // Note: This patch depends on bearinmind_patches:speedCamerasPatch which adds the SpeedCameras class
+    // The dependency is resolved at runtime by Morphe Manager when both sources are enabled
     execute {
         SpeedCamerasClassFingerprint.method.addInstructions(
             -1, // append to end of <clinit>
