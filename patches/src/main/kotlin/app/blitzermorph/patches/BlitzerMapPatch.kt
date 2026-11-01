@@ -3,9 +3,11 @@ package app.blitzermorph.patches
 import app.morphe.patcher.Fingerprint
 import app.morphe.patcher.extensions.InstructionExtensions.addInstructions
 import app.morphe.patcher.methodCall
+import app.morphe.patcher.OpcodesFilter.Companion.opcodesToFilters
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.patch.resourcePatch
 import app.blitzermorph.patches.shared.Constants.COMPATIBILITY_GOOGLE_MAPS
+import com.android.tools.smali.dexlib2.Opcode
 
 private const val EXTENSION_CLASS = "Lapp/blitzermorph/extension/BlitzerInjector;"
 
@@ -35,7 +37,7 @@ val SpeedCamerasClassFingerprint = Fingerprint(
     name = "<clinit>",
     returnType = "V",
     parameters = listOf(),
-    filters = listOf()
+    filters = opcodesToFilters(Opcode.RETURN)
 )
 
 /**
@@ -46,7 +48,7 @@ val SpeedCamerasRefreshFingerprint = Fingerprint(
     name = "refresh",
     returnType = "V",
     parameters = listOf("Landroid/content/Context;"),
-    filters = listOf()
+    filters = opcodesToFilters(Opcode.RETURN)
 )
 
 /**
@@ -57,7 +59,7 @@ val SpeedCamerasMapItemsFingerprint = Fingerprint(
     name = "mapItems",
     returnType = "Ljava/util/List;",
     parameters = listOf(),
-    filters = listOf()
+    filters = opcodesToFilters(Opcode.RETURN)
 )
 
 /**

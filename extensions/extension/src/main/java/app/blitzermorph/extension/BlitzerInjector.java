@@ -84,13 +84,13 @@ public final class BlitzerInjector {
     }
 
     // Called from the patch during SpeedCameras.refresh()
-    public static void initialize(Context context) {
-        try {
-            android.content.SharedPreferences prefs = context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
-            ENABLED = prefs.getBoolean(KEY_ENABLED, true);
-        } catch (Throwable t) { Log.w(TAG, "initialize", t); }
-    }
-    public static boolean isEnabled() { return ENABLED; }
+        public static void initialize(Context context) {
+            try {
+                android.content.Intent intent = new android.content.Intent();
+                // No-op; just ensure the extension is loaded.
+            } catch (Throwable t) { Log.w(TAG, "initialize", t); }
+        }
+        public static boolean isEnabled() { return ENABLED; }
 
     public static void onLocationChanged(Location location) {
         if (!ENABLED) return;
