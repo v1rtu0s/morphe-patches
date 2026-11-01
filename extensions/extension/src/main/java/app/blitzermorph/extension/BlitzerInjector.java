@@ -44,7 +44,7 @@ public final class BlitzerInjector {
     private static final String TAG = "BlitzerMorph";
 
     private static final String ATUDO_API = "https://cdn2.atudo.net/api/4.0/pois.php";
-    private static final String TYPES = "0,1,2,3,4,5,6,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115";
+    private static final String TYPES = "0,1,2,3,4,5,6"; // Mobile speed traps only
 
     private static final double BOX_PADDING_DEG = 0.13;   // ~14 km around the user
     private static final long CACHE_TTL_MS = 10 * 60 * 1000L;
@@ -428,17 +428,18 @@ public final class BlitzerInjector {
                     continue;
                 }
                 String type = poi.optString("type", "");
-                String vmax = poi.optString("vmax", "");
+                int typeInt = -1;
+                try {
+                    typeInt = Integer.parseInt(type);
+                } catch (NumberFormatException ignored) {}
 
-                // Determine camera kind based on Atudo type code
-                int kind;
-                if ("110".equals(type) || "101".equals(type)) {
-                    kind = 1; // red light camera
-                } else if ("113".equals(type) || "114".equals(type)) {
-                    kind = 2; // average speed camera
-                } else {
-                    kind = 0; // speed camera (mobile, fixed, etc.)
+                // Only keep mobile speed trap types (0 through 6)
+                if (typeInt < 0 || typeInt > 6) {
+                    continue;
                 }
+
+                String vmax = poi.optString("vmax", "");
+                int kind = 0; // mobile speed camera
 
                 String label = "Blitzer.de - ";
                 if (kind == 1) {
