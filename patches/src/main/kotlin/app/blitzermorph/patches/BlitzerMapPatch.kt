@@ -56,7 +56,7 @@ val SpeedCamerasRefreshFingerprint = Fingerprint(
 val SpeedCamerasMapItemsFingerprint = Fingerprint(
     definingClass = "Lorg/ungoogled/ui/SpeedCameras;",
     name = "mapItems",
-    returnType = "Ljava/util/List;",
+    returnType = "Lkotlin/collections/List;",
     parameters = listOf(),
     filters = listOf(anyInstruction())
 )
