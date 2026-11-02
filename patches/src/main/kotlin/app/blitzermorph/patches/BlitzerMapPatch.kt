@@ -51,17 +51,6 @@ val SpeedCamerasRefreshFingerprint = Fingerprint(
 )
 
 /**
- * Fingerprint for SpeedCameras.mapItems() - to inject Blitzer.de layer only when enabled.
- */
-val SpeedCamerasMapItemsFingerprint = Fingerprint(
-    definingClass = "Lorg/ungoogled/ui/SpeedCameras;",
-    name = "mapItems",
-    returnType = "Lkotlin/collections/List;",
-    parameters = listOf(),
-    filters = listOf(anyInstruction())
-)
-
-/**
  * BlitzerMorph - live Blitzer.de speed cameras for microG Maps.
  *
  * Adds a dedicated "Blitzer.de cameras" toggle to Speed Cameras settings.
@@ -78,6 +67,8 @@ val blitzerMapPatch = bytecodePatch(
 
     // Note: This patch depends on bearinmind_patches:speedCamerasPatch which adds the SpeedCameras class
     // The dependency is resolved at runtime by Morphe Manager when both sources are enabled
+
+    // 1. Add the preference key constant to SpeedCameras.<clinit>
     execute {
         SpeedCamerasClassFingerprint.method.addInstructions(
             -1, // append to end of <clinit>
@@ -106,24 +97,6 @@ val blitzerMapPatch = bytecodePatch(
             """
         )
     }
-
-    // 4. Modify mapItems() to conditionally inject Blitzer.de cameras
-    execute {
-        SpeedCamerasMapItemsFingerprint.method.addInstructions(
-            0,
-            """
-                invoke-static {}, $EXTENSION_CLASS;->getBlitzerMapItems()Ljava/util/List;
-                if-nez v0, :inject_blitzer
-                goto :return_original
-
-                :inject_blitzer
-                invoke-virtual {p0, v0}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
-
-                :return_original
-                return-object v0
-            """
-        )
-    }
 }
 
 /**
@@ -140,7 +113,7 @@ val blitzerPreferencePatch = resourcePatch(
         // Read the preferences XML
         val file = get("res/xml/preferences_speed_cameras.xml", true)
         val content = file.readText()
-        
+
         // Add the new preference before the closing PreferenceScreen
         val newPref = """
             <SwitchPreference
@@ -149,7 +122,7 @@ val blitzerPreferencePatch = resourcePatch(
                 android:summary="Show live Blitzer.de speed cameras from Atudo API"
                 android:defaultValue="true" />
             </PreferenceScreen>"""
-        
+
         val newContent = content.replace("</PreferenceScreen>", newPref.trim())
         file.writeText(newContent)
     }
