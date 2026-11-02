@@ -7,6 +7,7 @@ import app.morphe.patcher.methodCall
 import app.morphe.patcher.patch.bytecodePatch
 import app.morphe.patcher.patch.resourcePatch
 import app.blitzermorph.patches.shared.Constants.COMPATIBILITY_GOOGLE_MAPS
+import com.android.tools.smali.dexlib2.AccessFlags
 
 private const val EXTENSION_CLASS = "Lapp/blitzermorph/extension/BlitzerInjector;"
 
@@ -47,6 +48,7 @@ val SpeedCamerasRefreshFingerprint = Fingerprint(
     name = "refresh",
     returnType = "V",
     parameters = listOf("Landroid/content/Context;"),
+    accessFlags = listOf(AccessFlags.STATIC),
     filters = listOf(anyInstruction())
 )
 
