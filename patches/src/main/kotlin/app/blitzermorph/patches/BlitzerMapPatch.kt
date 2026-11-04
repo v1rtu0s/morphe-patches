@@ -80,7 +80,7 @@ val blitzerMapPatch = bytecodePatch(
             BlitzerHookFingerprint.method.addInstructions(
                 0,
                 """
-                    invoke-static {p0}, $EXTENSION_CLASS;->onLocationChanged(Landroid/location/Location;)V
+                    invoke-static {p0}, $EXTENSION_CLASS->onLocationChanged(Landroid/location/Location;)V
                 """
             )
         }
@@ -90,7 +90,7 @@ val blitzerMapPatch = bytecodePatch(
             SpeedCamerasRefreshFingerprint.method.addInstructions(
                 0,
                 """
-                    invoke-static {p0}, $EXTENSION_CLASS;->initialize(Landroid/content/Context;)V
+                    invoke-static {p0}, $EXTENSION_CLASS->initialize(Landroid/content/Context;)V
                 """
             )
         }
